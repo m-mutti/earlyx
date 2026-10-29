@@ -1,0 +1,14 @@
+{
+  "knuth1984": {
+    "author": "Donald E. Knuth",
+    "title": "The TeXbook",
+    "year": 1984,
+    "publisher": "Addison-Wesley"
+  },
+  "w3c2023": {
+    "author": "W3C",
+    "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+    "year": 2023,
+    "url": "https://www.w3.org/TR/WCAG22/"
+  }
+}

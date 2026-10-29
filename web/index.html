@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10131b" />
+    <title>Earlyx · Write once. Publish anywhere.</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Earlyx playground"><span class="brand-mark" aria-hidden="true">e<span>×</span></span><span>earlyx<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav" aria-label="Main navigation"><a href="/" class="current" aria-current="page">Playground</a><a href="/artifacts/index.html">Stage reports <span aria-hidden="true">↗</span></a></nav>
+      <div class="header-note"><span class="local-dot" aria-hidden="true"></span>Local compiler<span class="version-badge">PREVIEW</span></div>
+    </header>
+
+    <main>
+      <div class="intro">
+        <div><p class="eyebrow">A NEW LANGUAGE FOR DOCUMENTS</p><h1>Less ceremony. More writing.</h1><p class="intro-copy">One source. A beautiful page, a responsive website, a ready-to-share PDF.</p></div>
+        <div class="intro-decoration" aria-hidden="true"><span>source</span><span class="decoration-line"></span><span class="decoration-outputs">web<br>pdf</span></div>
+      </div>
+
+      <section class="playground" aria-label="Document playground">
+        <div class="workspace-toolbar">
+          <div class="example-control"><label for="example-select">Start with</label><select id="example-select" data-testid="example-select"><option value="">Loading examples…</option></select></div>
+          <div class="export-actions"><button id="download-html" class="button button-secondary" type="button" disabled><span aria-hidden="true">↧</span> HTML</button><button id="download-pdf" class="button button-primary" type="button" disabled><span aria-hidden="true">↧</span> Export PDF</button></div>
+        </div>
+
+        <div class="workspace-panels">
+          <section class="editor-panel" aria-labelledby="source-label">
+            <div class="panel-toolbar"><div class="file-title"><span class="file-icon" aria-hidden="true">≡</span><h2 id="source-label"><span id="source-filename" data-testid="source-filename">untitled.ex</span></h2><span id="unsaved-indicator" class="unsaved-dot" aria-label="Source edited" hidden></span></div><button id="compile-button" data-testid="compile-button" class="compile-button" type="button" title="Compile now (Control or Command + Enter)"><span aria-hidden="true">▷</span> Compile <kbd>⌘ ↵</kbd></button></div>
+            <div class="source-editor"><div id="line-numbers" class="line-numbers" aria-hidden="true">1</div><textarea id="source-input" data-testid="source-input" aria-label="Earlyx document source" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off"></textarea></div>
+            <div class="editor-footer"><span><span class="footer-dot" aria-hidden="true"></span>Earlyx</span><span id="source-count">0 lines · UTF-8</span></div>
+          </section>
+
+          <section class="preview-panel" aria-labelledby="preview-label">
+            <div class="panel-toolbar preview-toolbar"><h2 id="preview-label" class="sr-only">Document preview</h2><div class="preview-tabs" role="tablist" aria-label="Preview format"><button id="paged-tab" data-testid="paged-tab" role="tab" aria-selected="true" aria-controls="preview-content" tabindex="0" data-mode="paged" type="button">Paged</button><button id="web-tab" data-testid="web-tab" role="tab" aria-selected="false" aria-controls="preview-content" tabindex="-1" data-mode="web" type="button">Web</button><button id="pdf-tab" data-testid="pdf-tab" role="tab" aria-selected="false" aria-controls="preview-content" tabindex="-1" data-mode="pdf" type="button">PDF</button></div><span id="page-count" class="page-count">— pages</span></div>
+            <div id="preview-content" role="tabpanel" aria-labelledby="paged-tab"><iframe id="preview-frame" data-testid="preview-frame" title="Paged document preview" sandbox="allow-same-origin"></iframe><div id="preview-empty" class="preview-empty"><div class="empty-page" aria-hidden="true"><span></span><span></span><span></span></div><p>Your words, taking shape.</p><span>The compiler is getting ready.</span></div></div>
+            <div class="preview-footer"><span id="preview-description">Fixed pages · matches PDF layout</span><span class="preview-hint">Click text to find its source <span aria-hidden="true">↖</span></span></div>
+          </section>
+        </div>
+
+        <div class="build-bar"><div id="compile-status" data-testid="compile-status" class="compile-status" data-state="loading" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="status-text">Starting compiler</span></div><div class="build-metrics"><span class="metric"><span class="metric-label">COMPILE</span><strong id="stats-total" data-testid="stats-total">—</strong></span><span class="metric"><span class="metric-label">LAYOUT</span><strong id="stats-layout">—</strong></span><span class="metric"><span class="metric-label">CACHE</span><strong id="stats-cache">—</strong></span><button id="timing-toggle" class="timing-toggle" type="button" aria-expanded="false" aria-controls="timing-details">Details <span aria-hidden="true">⌄</span></button></div></div>
+        <div id="timing-details" class="timing-details" hidden><dl><div><dt>Parsing</dt><dd id="stats-parse">—</dd></div><div><dt>Layout</dt><dd id="stats-layout-detail">—</dd></div><div><dt>HTML rendering</dt><dd id="stats-render">—</dd></div><div><dt>Request round trip</dt><dd id="stats-roundtrip">—</dd></div><div><dt>Layout reuse</dt><dd id="stats-reuse">—</dd></div></dl><p>Preview timings exclude PDF export. The same compiled layout becomes a PDF when you open the PDF tab or export. Request time includes transport and response handling.</p></div>
+        <div id="diagnostics" class="diagnostics" hidden><div class="diagnostics-header"><strong id="diagnostic-summary">Compiler messages</strong><span>Select a message to jump to its source.</span></div><ul id="diagnostic-list" data-testid="diagnostic-list" aria-label="Compiler messages"></ul></div>
+      </section>
+
+      <footer class="page-footer"><span><span class="footer-cross" aria-hidden="true">✳</span> Made for ideas that deserve a good page.</span><span>Live preview <kbd>⌘ / Ctrl</kbd> + <kbd>Enter</kbd> to compile</span></footer>
+    </main>
+  </body>
+</html>

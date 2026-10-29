@@ -1,0 +1,32 @@
+{
+  "name": "earlyx",
+  "version": "0.1.0",
+  "description": "A local-first document language with a shared PDF and web layout engine",
+  "type": "module",
+  "bin": {
+    "earlyx": "./bin/earlyx.js"
+  },
+  "scripts": {
+    "start": "node bin/earlyx.js serve",
+    "test": "node --test tests/*.test.js",
+    "stages": "node scripts/stages.js",
+    "build": "node scripts/build.js",
+    "test:browser": "node scripts/browser-test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@xmldom/xmldom": "^0.9.12",
+    "fontkit": "^2.0.4",
+    "mathjax-full": "^3.2.1",
+    "pdfkit": "^0.20.2",
+    "svg-to-pdfkit": "^0.1.8"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "pdfjs-dist": "^6.4.299",
+    "playwright": "^1.64.1"
+  }
+}

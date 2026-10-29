@@ -1,0 +1,5 @@
+node_modules/
+.earlyx-cache/
+dist/
+artifacts/
+.DS_Store

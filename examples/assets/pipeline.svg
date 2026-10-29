@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="245" viewBox="0 0 730 245" role="img" aria-labelledby="title desc">
+  <title id="title">The Earlyx compilation pipeline</title>
+  <desc id="desc">Source becomes a semantic document, which branches into responsive HTML and shared positioned pages used by PDF and paged HTML.</desc>
+  <rect width="730" height="245" rx="18" fill="#f7f4ee"/>
+  <g fill="none" stroke="#7d8a89" stroke-width="2">
+    <path d="M135 122H178M348 122H388V62H435M388 122V179H435M580 179H613V148H642M613 179V211H642"/>
+  </g>
+  <g fill="#ffffff" stroke="#d6d9d0">
+    <rect x="18" y="92" width="117" height="60" rx="9"/>
+    <rect x="178" y="82" width="170" height="80" rx="9"/>
+    <rect x="435" y="32" width="145" height="60" rx="9"/>
+    <rect x="435" y="149" width="145" height="60" rx="9"/>
+  </g>
+  <g fill="#263238" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    <text x="76" y="128">Source</text>
+    <text x="263" y="117">Semantic</text><text x="263" y="139">document</text>
+    <text x="508" y="58">Responsive</text><text x="508" y="79">HTML</text>
+    <text x="508" y="175">Positioned</text><text x="508" y="197">pages</text>
+  </g>
+  <g fill="#b34f35" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+    <text x="641" y="152">PDF</text>
+    <text x="625" y="232">Paged HTML</text>
+  </g>
+</svg>
